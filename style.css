@@ -26,7 +26,7 @@
 
 /* Root */
 .root {
-  font-family: 'Inter', 'Arial' sans-serif;
+  font-family: 'Inter', 'Arial', sans-serif;
 
   margin: 0;
 
@@ -45,4 +45,110 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+}
+
+/* Header */
+
+.header {
+  border-bottom: 1px solid #545454;
+
+  max-width: 880px;
+
+  margin: 0 auto;
+}
+
+.header__logo {
+  max-width: 142px;
+  min-height: 33px;
+
+  margin: 45px 0 41px 0;
+
+  background-image: url(images/logo.svg);
+  background-repeat: no-repeat;
+}
+
+/* Content */
+.content {
+  margin: 0;
+}
+
+/* Profile */
+.profile {
+  display: grid;
+  grid-template-columns:
+    minmax(120px, min-content) minmax(336px, max-content)
+    minmax(24px, max-content) 1fr;
+  grid-template-rows: auto;
+
+  max-width: 880px;
+
+  margin: 40px auto 0 auto;
+}
+
+.profile__avatar {
+  max-width: 120px;
+  min-height: 120px;
+
+  margin: 0 30px 0 0;
+
+  border-radius: 50%;
+}
+
+.profile__info {
+  max-width: 336px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__title {
+  margin: 22px 0 0 0;
+
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+
+  color: #ffffff;
+}
+
+.profile__subtitle {
+  margin: 16px 0 0 0;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #ffffff;
+}
+
+.profile__edit-button {
+  display: flex;
+  box-sizing: border-box;
+  border: none;
+
+  background-color: #000000;
+
+  padding: 37px 0 59px 0;
+}
+
+.profile__edit-button-image {
+  max-width: 24px;
+  min-height: 24px;
+}
+
+.profile__add-button {
+  display: flex;
+  justify-content: flex-end;
+
+  box-sizing: border-box;
+  border: none;
+
+  background-color: #000000;
+
+  padding: 35px 0 35px 0;
+}
+
+.profile__add-buttom-image {
+  max-width: 150px;
+  min-height: 50px;
 }
