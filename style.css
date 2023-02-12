@@ -77,7 +77,7 @@
   display: grid;
   grid-template-columns:
     minmax(120px, min-content) minmax(336px, max-content)
-    minmax(24px, max-content) 1fr;
+    1fr;
   grid-template-rows: auto;
 
   max-width: 880px;
@@ -86,6 +86,8 @@
 }
 
 .profile__avatar {
+  display: flex;
+
   max-width: 120px;
   min-height: 120px;
 
@@ -97,12 +99,9 @@
 .profile__info {
   max-width: 336px;
 
-  display: flex;
-  flex-direction: column;
-
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(min-content, max-content) 1fr;
+  row-gap: 16px;
 }
 
 .profile__title {
@@ -120,8 +119,6 @@
 }
 
 .profile__subtitle {
-  margin: 16px 0 0 0;
-
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
@@ -130,17 +127,21 @@
   white-space: nowrap;
   overflow: hidden;
 
+  margin: 0;
+
   color: #ffffff;
 }
 
 .profile__edit-button {
   display: flex;
+
   box-sizing: border-box;
   border: none;
 
-  background-color: #000000;
+  margin: 37px 0 0 18px;
+  padding: 0;
 
-  padding: 37px 0 59px 0;
+  background-color: #000000;
 }
 
 .profile__edit-button-image {
@@ -236,5 +237,3 @@
 .elements__like:hover {
   opacity: 0.6;
 }
-
-/* Footer */
