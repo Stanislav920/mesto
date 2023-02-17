@@ -1,17 +1,22 @@
-# Проект: Место
+# Проектная работа 4: Место
 
-### Обзор
+Создать сайт для различных устройств. Создал попап.
 
-* Figma
-* Картинки
+## Описание работы
 
-**Figma**
+Сверстал сайт с применением grid, flex и javascript. Для адаптации сайта использовал media queries. Для создание попапа использовал javascript.
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+## Использовал технологии
 
-**Картинки**
+- HTML
+- Css
+- JavaScript
 
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
+### Посмотреть проект:
 
-Удачи!
+- (https://stanislav920.github.io/mesto/index.html)
+  > > > > > > > 73accc7c977ba1dbd9781efebdf18232ad3ce6a7
+
+### Ссылка на макет:
+
+- [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
