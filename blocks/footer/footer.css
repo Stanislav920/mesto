@@ -6,7 +6,7 @@
 /* Media =====
 ================= */
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 900px) {
   .footer {
     max-width: 600px;
   }

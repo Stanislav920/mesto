@@ -9,7 +9,7 @@
 /* Media =====
 ================= */
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 900px) {
   .header {
     max-width: 600px;
   }

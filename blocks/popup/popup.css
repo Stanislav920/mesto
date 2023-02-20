@@ -10,15 +10,6 @@
   align-items: center;
 
   position: fixed;
-  top: -43px;
+  top: 0;
   left: 0;
-}
-
-/* Media =====
-================= */
-
-@media screen and (max-width: 630px) {
-  .popup {
-    top: -120px;
-  }
 }

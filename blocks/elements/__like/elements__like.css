@@ -1,4 +1,15 @@
 .elements__like {
+  border: none;
+
+  margin: 0;
+  padding: 0;
+
+  background: url(../../../images/like.svg) 50%;
+  background-repeat: no-repeat;
+
+  min-width: 22px;
+  min-height: 19px;
+
   transition: all 0.2s linear;
 }
 
