@@ -13,7 +13,7 @@ let subtitleInput = editForm.querySelector('input[name = "subtitle"]');
 
 let formElement = document.querySelector('.popup__form');
 
-let likeElements = document.querySelectorAll('.elements__like');
+let saveProfile = document.querySelector('.popup');
 
 /* Открытие попапа. Добавление текста в форму */
 
@@ -23,27 +23,26 @@ profileEditButton.addEventListener('click', function () {
   subtitleInput.value = getSubtitle.textContent;
 });
 
-/* Закрытие попапа */
-
-popupClose.addEventListener('click', function () {
-  popup.classList.remove('popup_opened');
-});
-
 /* Функция для submit */
 
-popupSubmit.addEventListener('click', function handleFormSubmit(evt) {
+function handleFormSubmit(evt) {
   evt.preventDefault();
   getTitle.textContent = nameInput.value;
   getSubtitle.textContent = subtitleInput.value;
 
-  let saveProfile = document.querySelector('.popup');
-  saveProfile.classList.remove('popup_opened');
-});
-
-/* Покраска сердечка при клике */
-
-for (let likeItem of likeElements) {
-  likeItem.addEventListener('click', function () {
-    likeItem.classList.add('elements__like_active');
-  });
+  сlose();
 }
+formElement.addEventListener('submit', handleFormSubmit);
+
+function сlose() {
+  {
+    saveProfile.classList.remove('popup_opened');
+  }
+
+  {
+    popup.classList.remove('popup_opened');
+  }
+}
+
+popupClose.addEventListener('click', сlose);
+popupSubmit.addEventListener('click', close);

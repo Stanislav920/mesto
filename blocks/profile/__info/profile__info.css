@@ -7,6 +7,8 @@
   column-gap: 18px;
   align-items: center;
   align-content: center;
+
+  box-sizing: border-box;
 }
 
 /* Media =====
@@ -14,8 +16,12 @@
 
 @media screen and (max-width: 630px) {
   .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     row-gap: 14px;
     column-gap: 10px;
-    margin: 22px 0 0 0;
+
+    margin: 26px 0 0 0;
   }
 }
