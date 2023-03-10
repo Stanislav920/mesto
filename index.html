@@ -33,93 +33,99 @@
         <!-- Elements -->
         <section class="elements">
           <!-- Elements__item -->
-          <article class="elements__item">
+          <!-- <article class="elements__item">
+            <button class="elements__delete" type="button"></button>
             <img
               class="elements__image"
               src="images/whale.jpg"
               alt="Горбатый кит плывущий на поверхности моря"
-            />
+            /> 
             <div class="elements__info">
               <h2 class="elements__title">Горбатый кит</h2>
 
               <button class="elements__like" type="button"></button>
             </div>
-          </article>
+          </article> -->
           <!-- Elements__item -->
 
           <!-- Elements__item -->
-          <article class="elements__item">
-            <img
+          <!-- <article class="elements__item">
+            <button class="elements__delete" type="button"></button>
+             <img
               class="elements__image"
               src="images/turtle.jpg"
               alt="Черепаха плывущая над морским дном"
-            />
+            /> 
             <div class="elements__info">
               <h2 class="elements__title">Морская черепаха</h2>
 
               <button class="elements__like" type="button"></button>
             </div>
-          </article>
+          </article> -->
           <!-- Elements__item -->
 
           <!-- Elements__item -->
-          <article class="elements__item">
-            <img
+          <!--  <article class="elements__item">
+           <button class="elements__delete" type="button"></button>
+             <img
               class="elements__image"
               src="images/Jellyfishavif.jpg"
               alt="Медузы в ночном океане"
-            />
+            /> 
             <div class="elements__info">
               <h2 class="elements__title">Медузы</h2>
 
               <button class="elements__like" type="button"></button>
             </div>
-          </article>
+          </article> -->
           <!-- Elements__item -->
 
           <!-- Elements__item -->
-          <article class="elements__item">
-            <img
+          <!-- <article class="elements__item">
+            <button class="elements__delete" type="button"></button>
+             <img
               class="elements__image"
               src="images/coralreef.jpg"
               alt="Мозговой коралл с морскими рыбами на заднем плане"
-            />
+            /> 
             <div class="elements__info">
               <h2 class="elements__title">Мозговой коралл</h2>
 
               <button class="elements__like" type="button"></button>
             </div>
-          </article>
+          </article> -->
           <!-- Elements__item -->
 
           <!-- Elements__item -->
-          <article class="elements__item">
-            <img
+          <!--  <article class="elements__item">
+            <button class="elements__delete" type="button"></button>
+             <img
               class="elements__image"
               src="images/clownfish.jpg"
               alt="Рыба клоун в зарослях актиний"
-            />
+            /> 
             <div class="elements__info">
               <h2 class="elements__title">Анемоновый оцеллярис</h2>
 
               <button class="elements__like" type="button"></button>
             </div>
-          </article>
+          </article> -->
           <!-- Elements__item -->
 
           <!-- Elements__item -->
-          <article class="elements__item">
-            <img
+          <!-- <article class="elements__item">
+            <button class="elements__delete" type="button"></button>
+             <img
               class="elements__image"
               src="images/coral.jpg"
-              alt="Фрагмент кораллового рифа на морском дне"
-            />
+              alt="Фрагмент кораллового рифа на морском дне" 
+            /> 
             <div class="elements__info">
               <h2 class="elements__title">Коралловый риф</h2>
 
               <button class="elements__like" type="button"></button>
             </div>
-          </article>
+          </article> -->
           <!-- Elements__item -->
         </section>
         <!-- Elements -->
@@ -153,6 +159,64 @@
       </div>
     </div>
     <!-- Popup -->
+
+    <!-- Cards-popup -->
+    <div id="cards-popup" class="popup">
+      <div class="popup__container">
+        <button id="close-popup" class="popup__close" type="button"></button>
+        <h3 class="popup__title">Новое место</h3>
+
+        <!-- Form -->
+        <form id="form-cards" class="popup__form" name="card-name">
+          <label class="popup__label">
+            <input
+              id="input-title"
+              type="text"
+              class="popup__input"
+              name="username"
+              placeholder="Название"
+            />
+          </label>
+
+          <label class="popup__label">
+            <input
+              id="link-picture"
+              type="text"
+              class="popup__input"
+              name="newlink"
+              placeholder="Ссылка на картинку"
+            />
+          </label>
+          <button type="submit" class="popup__submit">Создать</button>
+        </form>
+        <!-- Form -->
+      </div>
+    </div>
+    <!-- Cards-popup -->
+
+    <!-- Image-popup -->
+    <div id="image-popup" class="popup popup__zoom_active">
+      <div class="popup__zoom-container">
+        <button id="close-image" class="popup__close" type="button"></button>
+
+        <img src="#" ait="" class="popup__image" />
+        <p class="popup__description"></p>
+      </div>
+    </div>
+    <!-- Image-popup -->
+
+    <!-- Template -->
+    <template id="elements-template">
+      <article class="elements__item">
+        <button class="elements__delete" type="button"></button>
+        <img class="elements__image" src="#" alt="" />
+        <div class="elements__info">
+          <h2 class="elements__title"></h2>
+          <button class="elements__like" type="button"></button>
+        </div>
+      </article>
+    </template>
+    <!-- Template -->
 
     <!-- Script -->
     <script src="scripts/index.js"></script>
