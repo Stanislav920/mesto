@@ -1,4 +1,4 @@
-const popupProfile = document.querySelector('#profile-popup');
+const popup = document.querySelector('#profile-popup');
 const popupCardButton = document.querySelector('#cards-popup');
 
 const profileEditButton = document.querySelector('.profile__edit-button');
@@ -39,26 +39,26 @@ function saveProfile() {
 
 /* Открытие попапа */
 
-function openPopup(popupProfile) {
-  popupProfile.classList.add('popup_opened');
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
 }
 //>------------------------------------------------------------
 
 /* Функция закрытия попапа */
 
-function closePopup(popupProfile) {
-  popupProfile.classList.remove('popup_opened');
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
 }
 //>------------------------------------------------------------
 
 profileEditButton.addEventListener('click', function () {
-  openPopup(popupProfile);
+  openPopup(popup);
   saveProfile();
 });
 //>------------------------------------------------------------
 
 popupCloseProfileButton.addEventListener('click', function () {
-  closePopup(popupProfile);
+  closePopup(popup);
 });
 //>------------------------------------------------------------
 
@@ -69,7 +69,7 @@ function handleFormProfileSubmit(evt) {
   getProfileTitle.textContent = nameProfileInput.value;
   getProfileSubtitle.textContent = subtitleProfileInput.value;
 
-  closePopup(popupProfile);
+  closePopup(popup);
 }
 
 formProfileElement.addEventListener('submit', handleFormProfileSubmit);
