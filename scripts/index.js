@@ -35,16 +35,13 @@ function saveProfile() {
   nameProfileInput.value = getProfileTitle.textContent;
   subtitleProfileInput.value = getProfileSubtitle.textContent;
 }
+//>------------------------------------------------------------
+
 /* Открытие попапа */
 
 function openPopup(popupProfile) {
   popupProfile.classList.add('popup_opened');
-  saveProfile();
 }
-
-profileEditButton.addEventListener('click', function () {
-  openPopup(popupProfile);
-});
 //>------------------------------------------------------------
 
 /* Функция закрытия попапа */
@@ -52,6 +49,13 @@ profileEditButton.addEventListener('click', function () {
 function closePopup(popupProfile) {
   popupProfile.classList.remove('popup_opened');
 }
+//>------------------------------------------------------------
+
+profileEditButton.addEventListener('click', function () {
+  openPopup(popupProfile);
+  saveProfile();
+});
+//>------------------------------------------------------------
 
 popupCloseProfileButton.addEventListener('click', function () {
   closePopup(popupProfile);
@@ -109,30 +113,22 @@ function addCard() {
 /* Функция для новой карточки */
 
 function createNewCard(newName, newLink) {
-  let newCard = document.querySelector('#elements-template').content.cloneNode(true);
-  let elementsItem = newCard.querySelector('.elements__item');
-  let cardTitle = newCard.querySelector('.elements__title');
-  let cardImage = newCard.querySelector('.elements__image');
+  const newCard = document.querySelector('#elements-template').content.cloneNode(true);
+  const elementsItem = newCard.querySelector('.elements__item');
+  const cardTitle = newCard.querySelector('.elements__title');
+  const cardImage = newCard.querySelector('.elements__image');
 
   cardTitle.textContent = newName;
   cardImage.setAttribute('src', newLink);
   cardImage.setAttribute('alt', cardTitle.textContent);
   //>------------------------------------------------------------
 
-  /* Zoom карточки */
-
-  cardsContainer.addEventListener('click', function (event) {
-    popupImage.src = event.target.cardImage;
-    popupImage.src = event.target.src;
-    popupImage.alt = event.target.alt;
-    popupDescription.textContent = event.target.alt;
-    console.log(cardImage);
-  });
-  //>------------------------------------------------------------
-
-  /* Функция открытия картинки */
+  /* Функция открытия картинки плюс zoom картинки */
 
   cardImage.addEventListener('click', function () {
+    popupImage.src = newLink;
+    popupImage.alt = newName;
+    popupDescription.textContent = newName;
     openPopup(popupImageButton);
   });
   //>------------------------------------------------------------
