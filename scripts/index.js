@@ -39,15 +39,15 @@ function saveProfile() {
 
 /* Открытие попапа */
 
-function openPopup(popupProfile) {
-  popupProfile.classList.add('popup_opened');
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
 }
 //>------------------------------------------------------------
 
 /* Функция закрытия попапа */
 
-function closePopup(popupProfile) {
-  popupProfile.classList.remove('popup_opened');
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
 }
 //>------------------------------------------------------------
 
