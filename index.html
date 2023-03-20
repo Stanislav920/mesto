@@ -19,7 +19,11 @@
       <main class="content">
         <!-- Profile -->
         <section class="profile">
-          <img src="images/image.jpg" alt="Картинка с аватаркой" class="profile__avatar" />
+          <img
+            src="images/image.jpg"
+            alt="Картинка с аватаркой"
+            class="profile__avatar"
+          />
           <div class="profile__info">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
             <button class="profile__edit-button" type="button"></button>
@@ -37,7 +41,9 @@
       <!-- Main -->
 
       <!-- Footer -->
-      <footer class="footer"><p class="footer__copyright">© 2023 Mesto Russia</p></footer>
+      <footer class="footer">
+        <p class="footer__copyright">© 2023 Mesto Russia</p>
+      </footer>
       <!-- Footer -->
     </div>
     <!-- Page -->
@@ -49,13 +55,37 @@
         <h3 class="popup__title">Редактировать профиль</h3>
 
         <!-- Form -->
-        <form id="profile-form" class="popup__form" name="profile">
+        <form id="profile-form" class="popup__form" name="profile" novalidate>
           <label class="popup__label">
-            <input type="text" class="popup__input" name="username" placeholder="Ваше имя" />
+            <input
+              id="username-input"
+              type="text"
+              class="popup__input"
+              name="username"
+              placeholder="Ваше имя"
+              value="Жак-Ив Кусто"
+              required
+              minlength="2"
+              maxlength="40"
+              autocomplete="off"
+            />
+            <span class="username-input-error popup__input-error"></span>
           </label>
 
           <label class="popup__label">
-            <input type="text" class="popup__input" name="subtitle" placeholder="О себе" />
+            <input
+              id="subtitle-input"
+              type="text"
+              class="popup__input"
+              name="subtitle"
+              placeholder="О себе"
+              autocomplete="off"
+              required
+              value="Исследователь океана"
+              minlength="2"
+              maxlength="200"
+            />
+            <span class="subtitle-input-error popup__input-error"></span>
           </label>
           <button type="submit" class="popup__submit">Сохранить</button>
         </form>
@@ -71,7 +101,7 @@
         <h3 class="popup__title">Новое место</h3>
 
         <!-- Form -->
-        <form id="form-cards" class="popup__form" name="card-name">
+        <form id="form-cards" class="popup__form" name="card-name" novalidate>
           <label class="popup__label">
             <input
               id="input-title"
@@ -79,17 +109,24 @@
               class="popup__input"
               name="username"
               placeholder="Название"
+              autocomplete="off"
+              minlength="2"
+              maxlength="30"
             />
+            <span class="input-title-error popup__input-error"></span>
           </label>
 
           <label class="popup__label">
             <input
               id="link-picture"
-              type="text"
+              type="url"
               class="popup__input"
               name="newlink"
               placeholder="Ссылка на картинку"
+              autocomplete="off"
+              required
             />
+            <span class="link-picture-error popup__input-error"></span>
           </label>
           <button type="submit" class="popup__submit">Создать</button>
         </form>
@@ -125,6 +162,7 @@
     <!-- Script -->
     <script src="scripts/array.js"></script>
     <script src="scripts/index.js"></script>
+    <script src="scripts/validate.js"></script>
     <!-- Script -->
   </body>
 </html>

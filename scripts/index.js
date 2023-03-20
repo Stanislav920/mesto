@@ -29,6 +29,21 @@ const popupCloseImageButton = document.querySelector('#close-image');
 const elementsImage = document.querySelector('.elements__image');
 //>------------------------------------------------------------
 
+/* Функция закрытия попапа по клику на темный фон */
+
+function escClosePopup(evt) {
+  if (
+    evt.target.classList.contains('popup_opened') ||
+    evt.target.classList.contains('popup__close')
+  ) {
+    closePopup(popupProfile);
+    closePopup(popupCardButton);
+    closePopup(popupImageButton);
+  }
+}
+
+//>------------------------------------------------------------
+
 /* Сохранение текста в попапе профиля */
 
 function saveProfile() {
@@ -37,10 +52,23 @@ function saveProfile() {
 }
 //>------------------------------------------------------------
 
+/* Функция закрытия попапа на кнопку esc */
+
+const handleEscClose = evt => {
+  if (evt.key === 'Escape') {
+    closePopup(popupProfile);
+    closePopup(popupCardButton);
+    closePopup(popupImageButton);
+  }
+};
+//>------------------------------------------------------------
+
 /* Открытие попапа */
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', handleEscClose);
+  document.addEventListener('mousedown', escClosePopup);
 }
 //>------------------------------------------------------------
 
@@ -48,6 +76,8 @@ function openPopup(popup) {
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', handleEscClose);
+  document.addEventListener('mousedown', escClosePopup);
 }
 //>------------------------------------------------------------
 
