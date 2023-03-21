@@ -5,7 +5,6 @@ const showInputError = (form, input, errorMessage, inputErrorClass, errorClass) 
   input.classList.add(inputErrorClass);
   errorElement.textContent = errorMessage;
   errorElement.classList.add(errorClass);
-  errorElement.classList.add(errorClass);
 };
 //>------------------------------------------------------------
 
@@ -44,8 +43,10 @@ const hasInvalidInput = inputList => {
 const toggleButtonState = (inputList, submitButton, inactiveButtonClass) => {
   if (hasInvalidInput(inputList)) {
     submitButton.classList.add(inactiveButtonClass);
+    submitButton.setAttribute('disabled', 'true');
   } else {
     submitButton.classList.remove(inactiveButtonClass);
+    submitButton.removeAttribute('disabled');
   }
 };
 //>------------------------------------------------------------
@@ -82,6 +83,15 @@ const setEventListeners = (
   });
 };
 //>------------------------------------------------------------
+
+/*const enableValidation (config) => setEventListeners(config) {
+  formSelector,
+  inputSelector,
+  submitButtonSelector,
+  inputErrorClass,
+  errorClass,
+  inactiveButtonClass
+};
 
 /* Функция включения валидности */
 

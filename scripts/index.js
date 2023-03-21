@@ -32,10 +32,7 @@ const elementsImage = document.querySelector('.elements__image');
 /* Функция закрытия попапа по клику на темный фон */
 
 function escClosePopup(evt) {
-  if (
-    evt.target.classList.contains('popup_opened') ||
-    evt.target.classList.contains('popup__close')
-  ) {
+  if (evt.target.classList.contains('popup_opened')) {
     closePopup(popupProfile);
     closePopup(popupCardButton);
     closePopup(popupImageButton);
@@ -63,7 +60,7 @@ const handleEscClose = evt => {
 };
 //>------------------------------------------------------------
 
-/* Открытие попапа */
+/* Функция открытие попапа */
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -77,7 +74,6 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', handleEscClose);
-  document.addEventListener('mousedown', escClosePopup);
 }
 //>------------------------------------------------------------
 
