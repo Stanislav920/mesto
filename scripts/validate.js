@@ -84,15 +84,6 @@ const setEventListeners = (
 };
 //>------------------------------------------------------------
 
-/*const enableValidation (config) => setEventListeners(config) {
-  formSelector,
-  inputSelector,
-  submitButtonSelector,
-  inputErrorClass,
-  errorClass,
-  inactiveButtonClass
-};
-
 /* Функция включения валидности */
 
 const enableValidation = ({
