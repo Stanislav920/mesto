@@ -1,3 +1,9 @@
+/* Импорты js файлов  */
+
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
+//>------------------------------------------------------------
+
 const popupProfile = document.querySelector('#profile-popup');
 const popupCardButton = document.querySelector('#cards-popup');
 
@@ -22,11 +28,32 @@ const inputTitleCard = document.querySelector('#input-title');
 const inputlinkPicture = document.querySelector('#link-picture');
 
 const popupImageButton = document.querySelector('#image-popup');
-const zoomContainer = document.querySelector('.popup__zoom-container');
 const popupImage = document.querySelector('.popup__image');
 const popupDescription = document.querySelector('.popup__description');
 const popupCloseImageButton = document.querySelector('#close-image');
-const elementsImage = document.querySelector('.elements__image');
+//>------------------------------------------------------------
+
+/* Селекторы для формы */
+
+const config = {
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit',
+  inactiveButtonClass: 'popup__submit_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input_error_visible'
+};
+//>------------------------------------------------------------
+
+/* Константа для попапа редактировать профиль */
+
+const profileFormValidator = new FormValidator(config, formProfileElement);
+profileFormValidator.enableValidation();
+//>------------------------------------------------------------
+
+/* Константа для попапа новое место */
+
+const cardFormValidator = new FormValidator(config, formCardElement);
+cardFormValidator.enableValidation();
 //>------------------------------------------------------------
 
 /* Функция закрытия попапа по клику на темный фон */
@@ -133,58 +160,34 @@ formCardElement.addEventListener('submit', handleFormNewItemSubmit);
 /* Функция добавления карточки */
 
 function addCard() {
-  cardsContainer.prepend(createNewCard(inputTitleCard.value, inputlinkPicture.value));
+  cardsContainer.prepend(
+    createNewCard({ name: inputTitleCard.value, link: inputlinkPicture.value })
+  );
 }
 //>------------------------------------------------------------
 
-/* Функция для новой карточки */
+/* Функция для zoom карточки */
 
-function createNewCard(newName, newLink) {
-  const newCard = document.querySelector('#elements-template').content.cloneNode(true);
-  const elementsItem = newCard.querySelector('.elements__item');
-  const cardTitle = newCard.querySelector('.elements__title');
-  const cardImage = newCard.querySelector('.elements__image');
+function handleCardClick(name, link) {
+  popupImage.src = link;
+  popupImage.alt = name;
+  popupDescription.textContent = name;
+  openPopup(popupImageButton);
+}
+//>------------------------------------------------------------
 
-  cardTitle.textContent = newName;
-  cardImage.setAttribute('src', newLink);
-  cardImage.setAttribute('alt', cardTitle.textContent);
-  //>------------------------------------------------------------
+/* Функция для получение карточки */
 
-  /* Функция открытия картинки плюс zoom картинки */
-
-  cardImage.addEventListener('click', function () {
-    popupImage.src = newLink;
-    popupImage.alt = newName;
-    popupDescription.textContent = newName;
-    openPopup(popupImageButton);
-  });
-  //>------------------------------------------------------------
-
-  /* Функция для изменения сердечка на черное */
-
-  elementsItem.querySelector('.elements__like').addEventListener('click', function (evt) {
-    evt.target.classList.toggle('elements__like_active');
-  });
-  //>------------------------------------------------------------
-
-  /* Удаление карточки */
-
-  const elementsDelete = newCard.querySelector('.elements__delete');
-  function deleteImage() {
-    const elementsContainer = elementsDelete.closest('.elements__item');
-    elementsContainer.remove();
-  }
-
-  elementsDelete.addEventListener('click', deleteImage);
-
-  return newCard;
+function createNewCard(data) {
+  const newCard = new Card(data, '#elements-template', handleCardClick);
+  return newCard.generateCard();
 }
 //>------------------------------------------------------------
 
 /* Функция для перебирание карточек в массиве */
 
 initialCards.forEach(card => {
-  cardsContainer.append(createNewCard(card.name, card.link));
+  cardsContainer.append(createNewCard({ name: card.name, link: card.link }));
 });
 //>------------------------------------------------------------
 
