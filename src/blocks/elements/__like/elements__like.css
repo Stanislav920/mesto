@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
 
-  background: url(../../../images/like.svg) 50%;
+  background: url(../../../../src/images/like.svg) 50%;
   background-repeat: no-repeat;
 
   min-width: 22px;
