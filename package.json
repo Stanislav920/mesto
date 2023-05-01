@@ -9,6 +9,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://github.com/Stanislav920/mesto.git",
   "author": "Stanislav Targonskiy",
   "license": "ISC",
   "devDependencies": {

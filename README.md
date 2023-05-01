@@ -14,7 +14,7 @@
 
 ### Посмотреть проект:
 
-- (https://stanislav920.github.io/mesto)
+- https://stanislav920.github.io/mesto/
   > > > > > > > 73accc7c977ba1dbd9781efebdf18232ad3ce6a7
 
 ### Ссылка на макет:
