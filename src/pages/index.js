@@ -17,7 +17,7 @@ import {
   popupAvatarForm,
   iconPopupAvatar,
   cardConfig
-} from '../components/utils/constants.js';
+} from '../utils/constants.js';
 
 //>------------------------------------------------------------
 
@@ -37,7 +37,7 @@ const api = new Api({
 Promise.all([api.getInitialCards(), api.getUserInfo()])
   .then(([cards, user]) => {
     userInfo.setUserInfo(user);
-    section.renderItems(cards.reverse());
+    section.renderItems(cards);
   })
   .catch(err => {
     console.log(err);
