@@ -18,11 +18,15 @@
       <main class="content">
         <!-- Profile -->
         <section class="profile">
-          <img
-            class="profile__avatar"
-            src="<%=require('./images/image.jpg')%>"
-            alt="Картинка с аватаркой"
-          />
+          <div class="profile__avatar-container">
+            <img
+              class="profile__avatar"
+              src="<%=require('./images/image.jpg')%>"
+              alt="Картинка с аватаркой"
+            />
+            <button class="profile__avatar-button" type="button"></button>
+          </div>
+
           <div class="profile__info">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
             <button class="profile__edit-button" type="button"></button>
@@ -145,6 +149,44 @@
     </div>
     <!-- Image-popup -->
 
+    <!-- Delete-popup -->
+    <div id="delete-card" class="popup">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <h3 class="popup__title">Вы уверены?</h3>
+
+        <form class="popup__form" name="delete-card" novalidate>
+          <button class="popup__submit" type="submit">Да</button>
+        </form>
+      </div>
+    </div>
+    <!-- Delete-popup -->
+
+    <!-- Avatar-popup -->
+    <div id="avatar-popup" class="popup">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <h3 class="popup__title">Обновить аватар</h3>
+        <form id="avatar-form" class="popup__form" name="user-avatar" novalidate>
+          <label class="popup__label">
+            <input
+              id="avatar-input"
+              class="popup__input"
+              type="url"
+              name="avatar"
+              placeholder="Введите ссылку на аватар"
+              required
+              minlength="2"
+              maxlength="200"
+            />
+            <span class="avatar-input-error popup__input-error"></span>
+          </label>
+          <button type="submit" class="popup__submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <!-- Avatar-popup -->
+
     <!-- Template -->
     <template id="elements-template">
       <article class="elements__item">
@@ -152,7 +194,10 @@
         <img class="elements__image" src="#" alt="" />
         <div class="elements__info">
           <h2 class="elements__title"></h2>
-          <button class="elements__like" type="button"></button>
+          <div class="elements__like-container">
+            <button class="elements__like" type="button"></button>
+            <p class="elements__like-counter"></p>
+          </div>
         </div>
       </article>
     </template>

@@ -1,38 +1,59 @@
-const popupProfile = document.querySelector('#profile-popup');
-const popupCardButton = document.querySelector('#cards-popup');
+const popupProfile = document.querySelector("#profile-popup");
+const popupCardButton = document.querySelector("#cards-popup");
 
-export const profileEditButton = document.querySelector('.profile__edit-button');
-export const profileAddButton = document.querySelector('.profile__add-button');
+export const profileEditButton = document.querySelector(
+  ".profile__edit-button"
+);
+export const profileAddButton = document.querySelector(".profile__add-button");
 
-const popupCloseProfileButton = document.querySelector('#close-profile');
-const closeCardsPopupButton = document.querySelector('#close-cards');
+const popupCloseProfileButton = document.querySelector("#close-profile");
+const closeCardsPopupButton = document.querySelector("#close-cards");
 
-const getProfileTitle = document.querySelector('.profile__title');
-const getProfileSubtitle = document.querySelector('.profile__subtitle');
+const getProfileTitle = document.querySelector(".profile__title");
+const getProfileSubtitle = document.querySelector(".profile__subtitle");
 
-const editProfileForm = document.querySelector('.popup__container');
-const nameProfileInput = editProfileForm.querySelector('input[name = "username"]');
-const subtitleProfileInput = editProfileForm.querySelector('input[name = "subtitle"]');
+const editProfileForm = document.querySelector(".popup__container");
+const nameProfileInput = editProfileForm.querySelector(
+  'input[name = "username"]'
+);
+const subtitleProfileInput = editProfileForm.querySelector(
+  'input[name = "subtitle"]'
+);
 
-export const formProfileElement = document.querySelector('#profile-form');
-export const formCardElement = document.querySelector('#form-cards');
+export const formProfileElement = document.querySelector("#profile-form");
+export const formCardElement = document.querySelector("#form-cards");
 
-const cardsContainer = document.querySelector('.elements');
-const inputTitleCard = document.querySelector('#input-title');
-const inputlinkPicture = document.querySelector('#link-picture');
+const cardsContainer = document.querySelector(".elements");
+const inputTitleCard = document.querySelector("#input-title");
+const inputlinkPicture = document.querySelector("#link-picture");
 
-const popupImageButton = document.querySelector('#image-popup');
-const popupImage = document.querySelector('.popup__image');
-const popupDescription = document.querySelector('.popup__description');
-const popupCloseImageButton = document.querySelector('#close-image');
+const popupImageButton = document.querySelector("#image-popup");
+const popupImage = document.querySelector(".popup__image");
+const popupDescription = document.querySelector(".popup__description");
+const popupCloseImageButton = document.querySelector("#close-image");
+
+export const avatar = document.querySelector(".profile__avatar");
+export const popupAvatar = document.querySelector("#avatar-popup");
+export const popupAvatarForm = popupAvatar.querySelector("#avatar-form");
+export const iconPopupAvatar = document.querySelector(
+  ".profile__avatar-button"
+);
 //>------------------------------------------------------------
 
 /* Селекторы для формы */
 
 export const config = {
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit',
-  inactiveButtonClass: 'popup__submit_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input_error_visible'
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__submit",
+  inactiveButtonClass: "popup__submit_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__input_error_visible",
+};
+
+export const cardConfig = {
+  titleSelector: ".elements__title",
+  imgSelector: ".elements__image",
+  btnLikeSelector: ".elements__like",
+  btnActiveSelector: ".elements__like_active",
+  btnDeleteSelector: ".elements__delete",
 };
